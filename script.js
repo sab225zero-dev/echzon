@@ -543,3 +543,55 @@ cta.classList.add("pulse");
 },2000);
 
 });
+// --- تفعيل مشغلات الصوت المخصصة ---
+document.querySelectorAll('.custom-player').forEach(player => {
+    const playBtn = player.querySelector('.play-pause-btn');
+    const icon = playBtn.querySelector('i');
+    const statusText = player.querySelector('.player-status');
+    const progressBar = player.querySelector('.progress-bar');
+    const progressContainer = player.querySelector('.progress-bar-container');
+    const audio = player.parentElement.querySelector('.audio-element');
+
+    playBtn.addEventListener('click', () => {
+        // إيقاف أي صوت آخر يعمل حالياً
+        document.querySelectorAll('.audio-element').forEach(otherAudio => {
+            if (otherAudio !== audio) {
+                otherAudio.pause();
+                const otherPlayer = otherAudio.parentElement.querySelector('.custom-player');
+                otherPlayer.querySelector('.play-pause-btn i').className = 'fas fa-play';
+                otherPlayer.querySelector('.player-status').textContent = 'تشغيل العينة';
+            }
+        });
+
+        if (audio.paused) {
+            audio.play();
+            icon.className = 'fas fa-pause';
+            statusText.textContent = 'جاري الاستماع...';
+        } else {
+            audio.pause();
+            icon.className = 'fas fa-play';
+            statusText.textContent = 'إيقاف مؤقت';
+        }
+    });
+
+    // تحديث شريط التقدم أثناء التشغيل
+    audio.addEventListener('timeupdate', () => {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+    });
+
+    // إعادة الزر لوضعه الطبيعي عند انتهاء الصوت
+    audio.addEventListener('ended', () => {
+        icon.className = 'fas fa-play';
+        statusText.textContent = 'تشغيل العينة';
+        progressBar.style.width = '0%';
+    });
+
+    // الضغط على شريط التقدم للانتقال في الصوت
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        const duration = audio.duration;
+        audio.currentTime = (clickX / width) * duration;
+    });
+});

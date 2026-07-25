@@ -25,6 +25,15 @@
     <meta name="twitter:title" content="ECHZON | ورشة التعليق الصوتي المجانية">
     <meta name="twitter:description" content="ابدأ رحلتك في مجال التعليق الصوتي مع ورشة مجانية يقدمها صهيب جمعة.">
     <meta name="twitter:image" content="assets/cover.jpg">
+    <!-- تحسين محركات البحث SEO وسوم الميتا -->
+    <title>ورشة التعليق الصوتي المجانية | ECHZON</title>
+    <meta name="description" content="انضم إلينا في ورشة التعليق الصوتي المجانية عبر الإنترنت. اكتشف أسرار التعليق الاحترافي، طور مهاراتك، وابدأ طريقك الصحيح في عالم الصوت مع خبراء المجال." />
+    <meta name="keywords" content="تعليق صوتي, ورشة مجانية, صوتيات, تدريب تعليق صوتي, ECHZON, فويس أوفر" />
+    
+    <!-- وسوم Open Graph للمشاركة على وسائل التواصل الاجتماعي (تويتر، فيسبوك، واتساب) -->
+    <meta property="og:title" content="ورشة التعليق الصوتي المجانية | ECHZON" />
+    <meta property="og:description" content="سجل الآن في الورشة المجانية للتعليق الصوتي وابدأ خطواتك الأولى نحو الاحتراف." />
+    <meta property="og:type" content="website" />
 
     <!-- Favicon & Fonts -->
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -32,6 +41,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        #backToTop {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 45px;
+            height: 45px;
+            background: #3b82f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+        }
+        #backToTop:hover {
+            background: #2563eb;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 
 <body>
@@ -73,7 +110,7 @@
             <a href="#hero">الرئيسية</a>
             <a href="#about">عن الورشة</a>
             <a href="#details">التفاصيل</a>
-            <a href="#">المدرب</a>
+            <a href="#trainer">المدرب</a>
             <a href="#faq">الأسئلة</a>
         </nav>
         <a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
@@ -151,15 +188,67 @@
                 <p>سنوات خبرة</p>
             </div>
             <div class="stat-card">
-                <h2>100%</h2>
+                <h2 class="counter" data-target="100">0%</h2>
                 <p>مجانية</p>
             </div>
+            
             <div class="stat-card">
-                <h2>Online</h2>
+                <h2 class="counter" data-target="350">0%</h2>
                 <p>Google Meet</p>
             </div>
+
         </div>
     </div>
+</section>
+<!-- قسم معرض الأعمال الصوتية -->
+<section id="portfolio" class="reveal">
+    <div class="container">
+        <div class="section-title">
+            <span>نماذج وأعمال</span>
+            <h2>استمع إلى عينات من أعمالنا الصوتية</h2>
+        </div>
+        
+<div class="portfolio-grid">
+    <!-- العينة الأولى -->
+    <div class="audio-card">
+        <h3>إعلانات تجارية متنوعة بالفصحى</h3>
+        <p>أعمال صوتية تستعرض أنماط إعلانية متنوعة</p>
+            <div class="custom-player">
+                <button class="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="player-info">
+                    <span class="player-status">تشغيل العينة</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+            <audio class="audio-element" src="https://raw.githubusercontent.com/sab225zero-dev/echzon/main/%D9%81%D8%B5%D8%AD%D9%89%20%D9%85%D9%86%D9%88%D8%B9.mp3"></audio>
+        </div>
+
+
+    <!-- العينة الثانية -->
+      <div class="audio-card">
+        <h3>إعلانات متنوعة باللهجة السعودية</h3>
+        <p>إعلانات سعودية حماسية</p>
+        
+        <div class="custom-player">
+            <button class="play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="player-info">
+                <span class="player-status">تشغيل العينة</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+        <audio class="audio-element" src="https://raw.githubusercontent.com/sab225zero-dev/echzon/main/%D9%84%D9%87%D8%AC%D8%A9%20%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%20%D8%AD%D9%85%D8%A7%D8%B3%D9%8A.mp3"></audio>
+    </div>
+
+</div>
+
 </section>
 
 <section id="about" class="reveal reveal-item">
@@ -437,7 +526,7 @@
                 <a href="#hero">الرئيسية</a>
                 <a href="#about">عن الورشة</a>
                 <a href="#details">التفاصيل</a>
-                <a href="#">المدرب</a>
+                <a href="#trainer">المدرب</a>
             </div>
             <div class="footer-contact">
                 <h3>تابعنا</h3>
@@ -461,8 +550,26 @@
     </div>
 </footer>
 
+<button id="backToTop" aria-label="الصعود للأعلى">↑</button>
+
 <script src="script.js" defer></script>
 <script>
+  // زر الصعود للأعلى
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+          backToTopBtn.style.display = 'flex';
+      } else {
+          backToTopBtn.style.display = 'none';
+      }
+  });
+  backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      });
+  });
+
   // 1. منع النقر بالزر الأيمن للماوس
   document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
@@ -481,6 +588,23 @@
       }
   });
 </script>
+<!-- قسم أزرار المشاركة السريعة -->
+<section class="share-section">
+    <div class="container">
+        <h3>شارك الورشة مع أصدقائك</h3>
+        <div class="share-buttons">
+            <a href="https://api.whatsapp.com/send?text=انضم%20إلينا%20في%20ورشة%20التعليق%20الصوتي%20المجانية%20عبر%20رابط%20الموقع" target="_blank" class="share-btn whatsapp">
+                <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=انضم%20إلينا%20في%20ورشة%20التعليق%20الصوتي" target="_blank" class="share-btn twitter">
+                <i class="fab fa-twitter"></i> تويتر
+            </a>
+            <a href="https://t.me/share/url?url=&text=ورشة%20التعليق%20الصوتي%20المجانية" target="_blank" class="share-btn telegram">
+                <i class="fab fa-telegram"></i> تلغرام
+            </a>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
