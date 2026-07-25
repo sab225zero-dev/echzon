@@ -595,3 +595,15 @@ document.querySelectorAll('.custom-player').forEach(player => {
         audio.currentTime = (clickX / width) * duration;
     });
 });
+// --- تشغيل رسالة الترحيب الصوتية عند أول تفاعل للزائر ---
+document.addEventListener('click', function playWelcome() {
+    const welcomeAudio = document.getElementById('welcome-audio');
+    if (welcomeAudio) {
+        welcomeAudio.play().then(() => {
+            // نجح تشغيل الصوت، نقوم بإزالة الحدث حتى لا يتكرر مع كل ضغطة
+            document.removeEventListener('click', playWelcome);
+        }).catch(e => {
+            console.log("التفاعل مطلوب لتشغيل الصوت");
+        });
+    }
+}, { once: true });
