@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta name="theme-color" content="#060816">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- رسالة الترحيب الصوتية -->
+<audio id="welcome-audio" src="assets/audio/ar.mp3" preload="auto"></audio>
+<!-- SEO & Metadata -->
+<title>ECHZON | ورشة التعليق الصوتي المجانية</title>
+<meta name="description" content="انضم إلينا في ورشة التعليق الصوتي المجانية عبر الإنترنت. اكتشف أسرار التعليق الاحترافي، طور مهاراتك، وابدأ طريقك الصحيح في عالم الصوت مع خبراء المجال.">
+<meta name="keywords" content="تعليق صوتي, Voice Over, ECHZON, ورشة مجانية">
+<meta name="author" content="ECHZON">
+<meta name="robots" content="index, follow">
+<!-- Open Graph / Social Media Sharing -->
+<meta property="og:title" content="ECHZON | ورشة التعليق الصوتي المجانية">
+<meta property="og:description" content="ابدأ رحلتك في عالم التعليق الصوتي من الصفر مع ورشة ECHZON الاحترافية.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/cover.jpg">
+<meta property="og:locale" content="ar_AR">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ECHZON | ورشة التعليق الصوتي المجانية">
+<meta name="twitter:description" content="ابدأ رحلتك في مجال التعليق الصوتي مع ورشة مجانية يقدمها صهيب جمعة.">
+<meta name="twitter:image" content="assets/cover.jpg">
+<!-- Favicon & Fonts -->
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- مكتبة الأيقونات Font Awesome لضمان ظهور أيقونات التشغيل -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+html {
+scroll-behavior: smooth;
+}
+#backToTop {
+position: fixed;
+bottom: 25px;
+left: 25px;
+width: 45px;
+height: 45px;
+background: #3b82f6;
+color: #ffffff;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+display: none;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+z-index: 999;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+transition: background 0.3s, transform 0.3s;
+}
+#backToTop:hover {
+background: #2563eb;
+transform: translateY(-3px);
+}
+</style>
+</head>
+<body>
+<div class="preloader">
+<div class="loader-content">
+<div class="loader-wave">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<p>Preparing Your Voice Journey...</p>
+</div>
+</div>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+<div class="particles">
+<span></span><span></span><span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="sound-grid"></div>
+<canvas id="particleCanvas"></canvas>
+<header class="header">
+<div class="container">
+<nav class="navbar" aria-label="القائمة الرئيسية">
+<a href="#hero">الرئيسية</a>
+<a href="#about">عن الورشة</a>
+<a href="#details">التفاصيل</a>
+<a href="#trainer">المدرب</a>
+<a href="#faq">الأسئلة</a>
+</nav>
+<a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
+احجز مقعدك
+</a>
+<button class="menu-btn" aria-label="فتح القائمة">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<main>
+<section id="hero" class="hero story-section">
+<div class="container hero-grid">
+<div class="hero-content">
+<span class="badge">
+ورشة مجانية بالكامل
+</span>
+<h1>
+صوتك قد يكون
+المهارة التي
+تغيّر مستقبلك.
+</h1>
+<p>
+ابدأ رحلتك في التعليق الصوتي
+من الصفر مع تدريب عملي
+يمنحك تصوراً واضحاً عن هذا المجال
+وكيف تبدأ بالطريقة الصحيحة.
+</p>
+<div class="hero-buttons">
+<a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
+احجز مقعدك مجانًا
+</a>
+<a href="#details" class="secondary-btn">
+اكتشف التفاصيل
+</a>
+</div>
+<div class="hero-rating">
+★★★★★
+<span>
+أكثر من 300 متدرب
+شاركوا في الورش السابقة.
+</span>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-circle hero-circle-1"></div>
+<div class="hero-circle hero-circle-2"></div>
+<div class="hero-circle hero-circle-3"></div>
+<div class="microphone-wrapper">
+<img src="assets/microphone.svg" alt="Microphone" class="microphone">
+<div class="audio-orbit orbit-1"></div>
+<div class="audio-orbit orbit-2"></div>
+<div class="audio-orbit orbit-3"></div>
+<div class="audio-core"></div>
+<div class="sound-wave wave-1"></div>
+<div class="sound-wave wave-2"></div>
+<div class="sound-wave wave-3"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="statistics reveal">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-card">
+<h2 class="counter" data-target="300">0</h2>
+<p>متدرب</p>
+</div>
+<div class="stat-card">
+<h2 class="counter" data-target="6">0</h2>
+<p>سنوات خبرة</p>
+</div>
+<div class="stat-card">
+<h2 class="counter" data-target="100">0%</h2>
+<p>مجانية</p>
+</div>
+<div class="stat-card">
+<h2 class="counter" data-target="100">0%</h2>
+<p>Google Meet</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- قسم معرض الأعمال الصوتية -->
+<section id="portfolio" class="reveal">
+<div class="container">
+<div class="section-title">
+<span>نماذج وأعمال</span>
+<h2>استمع إلى عينات من أعمالنا الصوتية</h2>
+</div>
+<div class="portfolio-grid">
+<!-- العينة الأولى (الفصحى) -->
+<div class="audio-card">
+    <h3>إعلانات تجارية متنوعة بالفصحى</h3>
+    <p>أعمال صوتية تستعرض أنماط إعلانية متنوعة</p>
+    <div class="custom-player">
+        <button class="play-pause-btn"><i class="fas fa-play"></i></button>
+        <div class="player-info">
+            <span class="player-status">تشغيل العينة</span>
+            <div class="progress-bar-container"><div class="progress-bar"></div></div>
+        </div>
+        <audio id="arabicAudio" class="audio-element"
+src="assets/audio/arabic.mp3"></audio>
+    </div>
+</div>
+
+<!-- العينة الثانية (السعودي) -->
+<div class="audio-card">
+    <h3>إعلانات متنوعة باللهجة السعودية</h3>
+    <p>إعلانات سعودية حماسية</p>
+    <div class="custom-player">
+        <button class="play-pause-btn"><i class="fas fa-play"></i></button>
+        <div class="player-info">
+            <span class="player-status">تشغيل العينة</span>
+            <div class="progress-bar-container"><div class="progress-bar"></div></div>
+        </div>
+        <audio id="saudiAudio" class="audio-element"
+src="assets/audio/saudi.mp3"></audio>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" class="reveal reveal-item">
+<div class="container">
+<div class="section-title">
+<span>لماذا هذه الورشة؟</span>
+<h2>بداية صحيحة... بدلاً من سنوات من التجربة والخطأ.</h2>
+<p>لن نكتفي بالحديث عن التعليق الصوتي، بل سنرسم لك الطريق الذي يبدأ منه كل معلق صوتي محترف.</p>
+</div>
+<div class="about-grid reveal-item">
+<div class="card reveal-item">
+<div class="card-icon reveal-item">
+<img src="assets/icons/target.svg" alt="Target">
+</div>
+<h3>خطة واضحة</h3>
+<p>ستعرف كيف تبدأ، وما الذي يجب تعلمه أولاً، وما الذي يمكن تأجيله.</p>
+</div>
+<div class="card">
+<div class="card-icon">
+<img src="assets/icons/mic.svg" alt="Mic">
+</div>
+<h3>خبرة عملية</h3>
+<p>كل ما ستسمعه مبني على تجربة حقيقية داخل سوق العمل.</p>
+</div>
+<div class="card">
+<div class="card-icon">
+<img src="assets/icons/chat.svg" alt="Questions">
+</div>
+<h3>إجابات مباشرة</h3>
+<p>ستحصل على فرصة لطرح أسئلتك والحصول على إجابات واضحة.</p>
+</div>
+<div class="card reveal-item">
+<div class="card-icon">
+<img src="assets/icons/rocket.svg" alt="Rocket">
+</div>
+<h3>انطلاقة حقيقية</h3>
+<p>ستخرج بخطوات عملية تساعدك على البدء بعد انتهاء الورشة مباشرة.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="details reveal" id="details">
+<div class="container">
+<div class="section-title">
+<span>تفاصيل الورشة</span>
+<h2>كل ما تحتاج معرفته قبل الانضمام</h2>
+</div>
+<div class="details-grid">
+<div class="detail-card reveal-item">
+<div class="detail-icon">
+<img src="assets/icons/calendar.svg" alt="Calendar">
+</div>
+<h3>التاريخ</h3>
+<p>الخميس
+31 يوليو</p>
+</div>
+<div class="detail-card">
+<div class="detail-icon">
+<img src="assets/icons/clock.svg" alt="Clock">
+</div>
+<h3>الوقت</h3>
+<p>7:00 مساءً
+بتوقيت دمشق</p>
+</div>
+<div class="detail-card reveal-item">
+<div class="detail-icon">
+<img src="assets/icons/monitor.svg" alt="Meet">
+</div>
+<h3>مكان الانعقاد</h3>
+<p>Google Meet</p>
+</div>
+<div class="detail-card reveal-item">
+<div class="detail-icon">
+<img src="assets/icons/gift.svg" alt="Free">
+</div>
+<h3>الرسوم</h3>
+<p>مجانية بالكامل</p>
+</div>
+</div>
+</div>
+</section>
+<section class="timeline reveal">
+<div class="container">
+<div class="section-title">
+<span>ماذا ستتعلم؟</span>
+<h2>رحلة مختصرة... تختصر عليك أشهرًا من البحث.</h2>
+</div>
+<div class="timeline-wrapper">
+<div class="timeline-item reveal-item">
+<div class="timeline-number">01</div>
+<div class="timeline-content">
+<h3>ما هو التعليق الصوتي؟</h3>
+<p>فهم المجال، أنواعه، وكيف يعمل سوق التعليق الصوتي.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">02</div>
+<div class="timeline-content">
+<h3>المجالات المتاحة</h3>
+<p>الإعلانات، الوثائقيات، الكتب الصوتية، الأخبار، الدبلجة وغيرها.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">03</div>
+<div class="timeline-content">
+<h3>المعدات التي تحتاجها</h3>
+<p>كيف تبدأ بأقل التكاليف دون شراء معدات لا تحتاجها.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">04</div>
+<div class="timeline-content">
+<h3>أشهر الأخطاء</h3>
+<p>أخطاء يقع فيها معظم المبتدئين وكيف تتجنبها.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">05</div>
+<div class="timeline-content">
+<h3>كيف تطور صوتك؟</h3>
+<p>تمارين عملية تساعدك على تحسين الأداء بشكل مستمر.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-number">06</div>
+<div class="timeline-content">
+<h3>كيف تحصل على أول عميل؟</h3>
+<p>خطوات واضحة للانتقال من التعلم إلى العمل.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="audience reveal">
+<div class="container">
+<div class="section-title">
+<span>لمن هذه الورشة؟</span>
+<h2>صُممت هذه الورشة لكل شخص يريد بداية صحيحة في مجال التعليق الصوتي.</h2>
+</div>
+<div class="audience-grid">
+<div class="audience-card reveal-item">
+<div class="audience-icon">
+<img src="assets/icons/user.svg" alt="Beginner">
+</div>
+<h3>المبتدئون</h3>
+<p>إذا لم يسبق لك دخول هذا المجال فستكون هذه أفضل نقطة للانطلاق.</p>
+</div>
+<div class="audience-card">
+<div class="audience-icon">
+<img src="assets/icons/content.svg" alt="Creators">
+</div>
+<h3>صناع المحتوى</h3>
+<p>تعلم كيف تجعل صوتك أكثر احترافية في فيديوهاتك ومحتواك.</p>
+</div>
+<div class="audience-card">
+<div class="audience-icon">
+<img src="assets/icons/book.svg" alt="Students">
+</div>
+<h3>الطلاب</h3>
+<p>إذا كنت تبحث عن مهارة جديدة تفتح لك فرص عمل مستقبلية.</p>
+</div>
+<div class="audience-card reveal-item">
+<div class="audience-icon">
+<img src="assets/icons/briefcase.svg" alt="Freelance">
+</div>
+<h3>المهتمون بالعمل الحر</h3>
+<p>تعرّف على أولى الخطوات لدخول سوق العمل في مجال التعليق الصوتي.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="trainer" class="reveal">
+<div class="container">
+<div class="trainer-card">
+<div class="trainer-image">
+<img src="assets/trainer.webp" alt="صهيب جمعة">
+</div>
+<div class="trainer-content">
+<span class="trainer-badge">Voice Over</span>
+<h2>صهيب جمعة</h2>
+<p>أمتلك خبرة عملية تتجاوز ست سنوات في مجال التعليق الصوتي، قدّمت خلالها عشرات المشاريع ودربت مئات المتدربين على فهم هذا المجال والدخول إليه بطريقة عملية بعيدًا عن التعقيد.</p>
+<div class="trainer-stats reveal-item">
+<div class="trainer-stat">
+<h3>6+</h3>
+<span>سنوات خبرة</span>
+</div>
+<div class="trainer-stat">
+<h3>300+</h3>
+<span>متدرب</span>
+</div>
+<div class="trainer-stat">
+<h3>100+</h3>
+<span>مشروع صوتي</span>
+</div>
+</div>
+<a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
+احجز مقعدك الآن
+</a>
+</div>
+</div>
+</div>
+</section>
+<section id="faq" class="faq reveal">
+<div class="container">
+<div class="section-title">
+<span>الأسئلة الشائعة</span>
+<h2>قد تجد إجابة سؤالك هنا</h2>
+</div>
+<div class="faq-wrapper">
+<div class="faq-item active">
+<button class="faq-question">
+<span>هل الورشة مجانية؟</span>
+<img src="assets/icons/plus.svg" alt="Expand">
+</button>
+<div class="faq-answer">
+<p>نعم، الورشة مجانية بالكامل، ولا يوجد أي رسوم للتسجيل أو الحضور.</p>
+</div>
+</div>
+<div class="faq-item reveal-item">
+<button class="faq-question">
+<span>هل أحتاج إلى خبرة سابقة؟</span>
+<img src="assets/icons/plus.svg" alt="Expand">
+</button>
+<div class="faq-answer">
+<p>لا، الورشة مناسبة للمبتدئين، وستبدأ من الأساسيات حتى تتكون لديك صورة واضحة عن المجال.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+<span>كيف سأحصل على رابط الحضور؟</span>
+<img src="assets/icons/plus.svg" alt="Expand">
+</button>
+<div class="faq-answer">
+<p>بعد تعبئة نموذج التسجيل، سيتم إرسال رابط الانضمام إلى Google Meet قبل موعد الورشة.</p>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">
+<span>هل يمكنني طرح الأسئلة أثناء الورشة؟</span>
+<img src="assets/icons/plus.svg" alt="Expand">
+</button>
+<div class="faq-answer">
+<p>بالتأكيد، سيكون هناك وقت مخصص للإجابة عن الأسئلة والاستفسارات.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta reveal">
+<div class="container">
+<div class="cta-box">
+<span>المقاعد محدودة</span>
+<h2>ابدأ رحلتك في التعليق الصوتي بخطوة واحدة فقط.</h2>
+<p>احجز مقعدك الآن، وانضم إلى ورشة مجانية تمنحك تصورًا عمليًا عن المجال وكيف تبدأ فيه بطريقة صحيحة.</p>
+<a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
+احجز مقعدك مجانًا
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<p>Echo Zone</p>
+<span>مساحة يبدأ منها صوتك...</span>
+</div>
+<div class="footer-links">
+<h3>التنقل</h3>
+<a href="#hero">الرئيسية</a>
+<a href="#about">عن الورشة</a>
+<a href="#details">التفاصيل</a>
+<a href="#trainer">المدرب</a>
+</div>
+<div class="footer-contact">
+<h3>تابعنا</h3>
+<a href="https://www.facebook.com/share/1CTC1KmgBE/" target="_blank" rel="noopener noreferrer">
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+</a>
+<a href="https://www.instagram.com/echzon_audio?igsh=MWJlZ2F6YWFxeHRyZQ==" target="_blank" rel="noopener noreferrer">
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+</a>
+<a href="https://www.linkedin.com/in/souhaibjomah" target="_blank" rel="noopener noreferrer">
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<title>LinkedIn</title>
+<path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.346V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.268 2.372 4.268 5.456v6.285zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM7.119 20.452H3.555V9h3.564v11.452z"/>
+</svg>
+</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 ECHZON. جميع الحقوق محفوظة.</p>
+</div>
+</div>
+</footer>
+<button id="backToTop" aria-label="الصعود للأعلى">↑</button>
+<script src="script.js" defer></script>
+<script>
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopBtn.style.display = 'flex';
+} else {
+backToTopBtn.style.display = 'none';
+}
+});
+backToTopBtn.addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+document.addEventListener('keydown', function(e) {
+if (e.key === 'F12') { e.preventDefault(); }
+if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) { e.preventDefault(); }
+if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); }
+});
+</script>
+<section class="share-section">
+<div class="container">
+<h3>شارك الورشة مع أصدقائك</h3>
+<div class="share-buttons">
+<a href="https://api.whatsapp.com/send?text=انضم%20إلينا%20في%20ورشة%20التعليق%20الصوتي%20المجانية" target="_blank" class="share-btn whatsapp">
+<i class="fab fa-whatsapp"></i> واتساب
+</a>
+<a href="https://twitter.com/intent/tweet?text=انضم%20إلينا%20في%20ورشة%20التعليق%20الصوتي" target="_blank" class="share-btn twitter">
+<i class="fab fa-twitter"></i> تويتر
+</a>
+<a href="https://t.me/share/url?url=&text=ورشة%20التعليق%20الصوتي%20المجانية" target="_blank" class="share-btn telegram">
+<i class="fab fa-telegram"></i> تلغرام
+</a>
+</div>
+</div>
+</section>
+</body>
+</html>
