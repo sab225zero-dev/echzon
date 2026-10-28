@@ -708,3 +708,46 @@ nav img {
 .brand-logo:hover {
     transform: scale(1.03);
 }
+/* تنسيق شريط التنقل العلوي (الهيدر) بشكل عصري ومتناسق */
+header.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 15, 25, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+header.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* تنسيق حاوية الأزرار في الهيدر (زر القائمة وزر الحجز) */
+header.header .nav-actions, 
+header.header div:has(> .navbar),
+header.header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* إخفاء الروابط النصية الكلاسيكية في الهيدر إن وجدت، ليبقى الهيدر نظيفاً مع زر القائمة والشعار */
+.header .navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .header .navbar {
+        display: none; /* إخفاء الروابط العادية على الموبايل والاعتماد على قائمة الهامبرغر */
+    }
+}
