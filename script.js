@@ -329,3 +329,39 @@ document.addEventListener('click', function playWelcome() {
         });
     }
 }, { once: true });
+/*=========================================
+COUNTDOWN TIMER FOR UPCOMING WORKSHOP
+=========================================*/
+document.addEventListener("DOMContentLoaded", function () {
+    // تحديد موعد الورشة القادمة بدقة (28 يوليو 2026 الساعة 19:00)
+    const workshopDate = new Date("July 28, 2026 19:00:00").getTime();
+
+    const timerInterval = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = workshopDate - now;
+
+        const countdownElement = document.getElementById("countdown-timer");
+        if (!countdownElement) return;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            countdownElement.innerHTML = "<h3 style='color: #2FD6FF; grid-column: span 4;'>انطلقت الورشة الآن!</h3>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysElem = document.getElementById("days");
+        const hoursElem = document.getElementById("hours");
+        const minutesElem = document.getElementById("minutes");
+        const secondsElem = document.getElementById("seconds");
+
+        if (daysElem) daysElem.textContent = String(days).padStart(2, '0');
+        if (hoursElem) hoursElem.textContent = String(hours).padStart(2, '0');
+        if (minutesElem) minutesElem.textContent = String(minutes).padStart(2, '0');
+        if (secondsElem) secondsElem.textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+});

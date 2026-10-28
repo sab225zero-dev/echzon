@@ -3859,3 +3859,89 @@ html, body {
     border-radius: 10px;
     transition: width 0.1s linear;
 }
+/* --- تصميم قسم الورشات القادمة والعداد التنازلي --- */
+.workshops-section {
+    background: linear-gradient(180deg, rgba(6, 8, 22, 0.8), rgba(16, 22, 45, 0.9));
+    position: relative;
+}
+
+.workshop-card-main {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(47, 214, 255, 0.15);
+    border-radius: 28px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.workshop-info-box h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.workshop-info-box p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.workshop-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.workshop-meta-list li {
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.workshop-meta-list li i {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.countdown-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.countdown-box {
+    background: rgba(47, 214, 255, 0.06);
+    border: 1px solid rgba(47, 214, 255, 0.2);
+    border-radius: 18px;
+    padding: 20px 10px;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-box span {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.countdown-box .label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .workshop-card-main {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+}

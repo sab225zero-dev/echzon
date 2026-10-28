@@ -95,6 +95,8 @@ transform: translateY(-3px);
 <div class="container">
 <nav class="navbar" aria-label="القائمة الرئيسية">
 <a href="#hero">الرئيسية</a>
+<a href="#workshops">الورشات القادمة</a>
+<a href="#portfolio">معرض الأعمال</a>
 <a href="#about">عن الورشة</a>
 <a href="#details">التفاصيل</a>
 <a href="#trainer">المدرب</a>
@@ -132,8 +134,8 @@ transform: translateY(-3px);
 <a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
 احجز مقعدك مجانًا
 </a>
-<a href="#details" class="secondary-btn">
-اكتشف التفاصيل
+<a href="#workshops" class="secondary-btn">
+الورشة القادمة
 </a>
 </div>
 <div class="hero-rating">
@@ -161,6 +163,52 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
+<!-- قسم الورشات القادمة والعداد التنازلي -->
+<section id="workshops" class="workshops-section reveal">
+<div class="container">
+<div class="section-title">
+<span>موعدنا القادم</span>
+<h2>تبويب الورشات القادمة والعداد التنازلي</h2>
+<p>احجز مقعدك الآن قبل انطلاق الورشة الحصرية عبر الإنترنت</p>
+</div>
+<div class="workshop-card-main">
+<div class="workshop-info-box">
+<h3>ورشة التعليق الصوتي الاحترافية (النسخة المجانية)</h3>
+<p>انضم إلينا في بث مباشر عبر Google Meet يتعرف فيه المشاركون على أسرار التعليق الصوتي، إدارة الطبقات، وكيفية بناء أول ديمو صوتي احترافي.</p>
+<ul class="workshop-meta-list">
+<li><i class="fas fa-calendar-alt"></i> الثلاثاء، 28 يوليو 2026</li>
+<li><i class="fas fa-clock"></i> 7:00 مساءً بتوقيت دمشق</li>
+<li><i class="fas fa-video"></i> عبر منصة Google Meet</li>
+</ul>
+</div>
+<div class="countdown-container" id="countdown-timer">
+<div class="countdown-box">
+<span id="days">00</span>
+<span class="label">أيام</span>
+</div>
+<div class="countdown-box">
+<span id="hours">00</span>
+<span class="label">ساعات</span>
+</div>
+<div class="countdown-box">
+<span id="minutes">00</span>
+<span class="label">دقيقة</span>
+</div>
+<div class="countdown-box">
+<span id="seconds">00</span>
+<span class="label">ثانية</span>
+</div>
+</div>
+</div>
+<div style="text-align: center; margin-top: 40px;">
+<a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button pulse">
+سجل في الورشة الحالية فوراً
+</a>
+</div>
+</div>
+</section>
+
 <section class="statistics reveal">
 <div class="container">
 <div class="stats-grid">
@@ -202,8 +250,7 @@ transform: translateY(-3px);
             <span class="player-status">تشغيل العينة</span>
             <div class="progress-bar-container"><div class="progress-bar"></div></div>
         </div>
-        <audio id="arabicAudio" class="audio-element"
-src="assets/audio/arabic.mp3"></audio>
+        <audio id="arabicAudio" class="audio-element" src="assets/audio/arabic.mp3"></audio>
     </div>
 </div>
 
@@ -217,8 +264,7 @@ src="assets/audio/arabic.mp3"></audio>
             <span class="player-status">تشغيل العينة</span>
             <div class="progress-bar-container"><div class="progress-bar"></div></div>
         </div>
-        <audio id="saudiAudio" class="audio-element"
-src="assets/audio/saudi.mp3"></audio>
+        <audio id="saudiAudio" class="audio-element" src="assets/audio/saudi.mp3"></audio>
     </div>
 </div>
 </div>
@@ -276,16 +322,14 @@ src="assets/audio/saudi.mp3"></audio>
 <img src="assets/icons/calendar.svg" alt="Calendar">
 </div>
 <h3>التاريخ</h3>
-<p>الأحد
-2 أغسطس</p>
+<p>الثلاثاء 28 يوليو</p>
 </div>
 <div class="detail-card">
 <div class="detail-icon">
 <img src="assets/icons/clock.svg" alt="Clock">
 </div>
 <h3>الوقت</h3>
-<p>7:00 مساءً
-بتوقيت دمشق</p>
+<p>7:00 مساءً بتوقيت دمشق</p>
 </div>
 <div class="detail-card reveal-item">
 <div class="detail-icon">
@@ -494,6 +538,7 @@ src="assets/audio/saudi.mp3"></audio>
 <div class="footer-links">
 <h3>التنقل</h3>
 <a href="#hero">الرئيسية</a>
+<a href="#workshops">الورشات القادمة</a>
 <a href="#about">عن الورشة</a>
 <a href="#details">التفاصيل</a>
 <a href="#trainer">المدرب</a>
