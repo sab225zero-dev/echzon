@@ -669,3 +669,20 @@ div:has(> a[href="#hero"]) {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 136, 204, 0.2);
 }
+/* تنسيق الشعار ليصبح شفافاً، عصرياً، ومتناسقاً مع الهيدر */
+header img, 
+.logo img, 
+nav img {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-height: 45px; /* ضبط الارتفاع ليكون مناسباً للهيدر */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+header img:hover, 
+.logo img:hover {
+    transform: scale(1.05);
+}
