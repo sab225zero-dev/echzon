@@ -751,3 +751,42 @@ header.header nav {
         display: none; /* إخفاء الروابط العادية على الموبايل والاعتماد على قائمة الهامبرغر */
     }
 }
+/* فرض الترتيب الصحيح لشريط التنقل العلوي وتوزيع العناصر */
+header.header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(11, 15, 25, 0.9) !important;
+    backdrop-filter: blur(10px);
+    z-index: 9999 !important;
+    padding: 12px 0 !important;
+}
+
+header.header .container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+/* ضبط إزاحة العناصر الداخلية */
+header.header .brand-logo {
+    order: 1 !important;
+}
+
+header.header div:has(.main-btn),
+header.header div:has(button.menu-btn) {
+    order: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+/* إخفاء الروابط النصية الزائدة في الهيدر إن وجدت ليبقى منظماً */
+header.header .navbar {
+    display: none !important;
+}
