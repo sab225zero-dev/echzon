@@ -790,3 +790,25 @@ header.header div:has(button.menu-btn) {
 header.header .navbar {
     display: none !important;
 }
+/* ضبط الهيدر وترتيب الأماكن بشكل نهائي */
+header.header {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #070a13 !important;
+    z-index: 99999 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+header.header .container {
+    display: flex !important;
+    flex-direction: row-reverse !important; /* لضمان اليمين يمين واليسار يسار */
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 15px 20px !important;
+    width: 100% !important;
+}
