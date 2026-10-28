@@ -696,3 +696,15 @@ nav img {
     width: auto;
     object-fit: contain;
 }
+/* تنسيق الشعار النصي الجديد للهيدر */
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.03);
+}
