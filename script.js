@@ -253,7 +253,7 @@ if (cta) {
     });
 }
 
-// --- تفعيل مشغلات الصوت المخصصة (تم الإصلاح والربط المباشر) ---
+// --- تفعيل مشغلات الصوت المخصصة ---
 document.querySelectorAll('.custom-player').forEach(player => {
     const playBtn = player.querySelector('.play-pause-btn');
     const icon = playBtn.querySelector('i');
@@ -264,7 +264,6 @@ document.querySelectorAll('.custom-player').forEach(player => {
 
     if (playBtn && audio) {
         playBtn.addEventListener('click', () => {
-            // إيقاف أي صوت آخر يعمل حالياً
             document.querySelectorAll('.audio-element').forEach(otherAudio => {
                 if (otherAudio !== audio) {
                     otherAudio.pause();
@@ -289,7 +288,6 @@ document.querySelectorAll('.custom-player').forEach(player => {
             }
         });
 
-        // تحديث شريط التقدم أثناء التشغيل
         audio.addEventListener('timeupdate', () => {
             if (audio.duration) {
                 const progressPercent = (audio.currentTime / audio.duration) * 100;
@@ -297,14 +295,12 @@ document.querySelectorAll('.custom-player').forEach(player => {
             }
         });
 
-        // إعادة الزر لوضعه الطبيعي عند انتهاء الصوت
         audio.addEventListener('ended', () => {
             icon.className = 'fas fa-play';
             statusText.textContent = 'تشغيل العينة';
             if (progressBar) progressBar.style.width = '0%';
         });
 
-        // الضغط على شريط التقدم للانتقال في الصوت
         if (progressContainer) {
             progressContainer.addEventListener('click', (e) => {
                 const width = progressContainer.clientWidth;
@@ -318,7 +314,7 @@ document.querySelectorAll('.custom-player').forEach(player => {
     }
 });
 
-// --- تشغيل رسالة الترحيب الصوتية عند أول تفاعل للزائر ---
+// --- تشغيل رسالة الترحيب الصوتية ---
 document.addEventListener('click', function playWelcome() {
     const welcomeAudio = document.getElementById('welcome-audio');
     if (welcomeAudio) {
@@ -329,12 +325,13 @@ document.addEventListener('click', function playWelcome() {
         });
     }
 }, { once: true });
+
 /*=========================================
 COUNTDOWN TIMER FOR UPCOMING WORKSHOP
 =========================================*/
 document.addEventListener("DOMContentLoaded", function () {
-    // تحديد موعد الورشة القادمة بدقة (28 يوليو 2026 الساعة 19:00)
-    const workshopDate = new Date("July 28, 2026 19:00:00").getTime();
+    // تحديد موعد الورشة القادمة بدقة (29 أكتوبر 2026 الساعة 19:00)
+    const workshopDate = new Date("October 29, 2026 19:00:00").getTime();
 
     const timerInterval = setInterval(function () {
         const now = new Date().getTime();
