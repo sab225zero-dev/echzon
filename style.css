@@ -555,3 +555,28 @@ p{ font-size:1.05rem; color:var(--text); }
     color: var(--muted);
     font-size: 0.85rem;
 }
+/* تنسيق روابط التنقل والفوتر بشكل عصري */
+.footer-links, 
+div[class*="footer"] a {
+    display: inline-block;
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover, 
+div[class*="footer"] a:hover {
+    color: var(--primary, #00d2ff);
+    transform: translateX(-5px);
+    text-decoration: none;
+}
+
+/* تنظيم قائمة التنقل عمودياً */
+div:has(> a[href="#hero"]) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
