@@ -686,3 +686,13 @@ header img:hover,
 .logo img:hover {
     transform: scale(1.05);
 }
+/* إخفاء الخلفية السوداء المدمجة في ملف الشعار باستخدام خاصية المزج */
+header img, 
+.logo img, 
+nav img {
+    mix-blend-mode: screen; /* تقوم بإزالة اللون الأسود تماماً وإظهار العناصر البيضاء/الفاتحة فقط */
+    background: transparent !important;
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+}
