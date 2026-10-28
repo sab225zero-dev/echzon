@@ -14,11 +14,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5LV72LP5WN');
 </script>
 
-<meta name="description" content="انضم إلينا في ورشة التعليق الصوتي المجانية عبر الإنترنت. اكتشف أسرار التعليق الاحترافي، طور مهاراتك، وابدأ طريقك الصحيح في عالم الصوت معخبراء المجال.">
+<meta name="description" content="انضم إلينا في ورشة التعليق الصوتي المجانية عبر الإنترنت. اكتشف أسرار التعليق الاحترافي، طور مهاراتك، وابدأ طريقك الصحيح في عالم الصوت مع خبراء المجال.">
 <meta name="keywords" content="تعليق صوتي, Voice Over, ECHZON, ورشة مجانية">
 <meta name="author" content="ECHZON">
 <meta name="robots" content="index, follow">
@@ -100,7 +99,7 @@ transform: translateY(-3px);
             <i class="fas fa-wave-square" style="color: #00d2ff; font-size: 1.2rem;"></i>
         </a>
 
-        <!-- روابط التنقل (القائمة المنسدلة للموبايل وللشاشات العادية) -->
+        <!-- روابط التنقل (القائمة المنسدلة) -->
         <nav class="navbar" aria-label="القائمة الرئيسية">
             <a href="#hero">الرئيسية</a>
             <a href="#workshops">الورشات القادمة</a>
@@ -321,6 +320,7 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
 <section class="details reveal" id="details">
 <div class="container">
 <div class="section-title">
@@ -359,6 +359,7 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
 <section class="timeline reveal">
 <div class="container">
 <div class="section-title">
@@ -411,6 +412,7 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
 <section class="audience reveal">
 <div class="container">
 <div class="section-title">
@@ -448,8 +450,8 @@ transform: translateY(-3px);
 </div>
 </div>
 </div>
-
 </section>
+
 <!-- قسم آراء المتدربين (Testimonials) -->
 <section id="testimonials" class="testimonials-section reveal">
 <div class="container">
@@ -538,11 +540,10 @@ transform: translateY(-3px);
 <audio class="audio-element" src="assets/audio/review4.mp3"></audio>
 </div>
 </div>
-
 </div>
 </div>
-
 </section>
+
 <section id="trainer" class="reveal">
 <div class="container">
 <div class="trainer-card">
@@ -574,6 +575,7 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
 <section id="faq" class="faq reveal">
 <div class="container">
 <div class="section-title">
@@ -620,12 +622,13 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+
 <section class="cta reveal">
 <div class="container">
 <div class="cta-box">
 <span>المقاعد محدودة</span>
 <h2>ابدأ رحلتك في التعليق الصوتي بخطوة واحدة فقط.</h2>
-<p>احجز مقعدك الآن، وانضم إلى ورشة مجانية تمنحك تصورًا عمليًا عن المجال وكيف تبدأفيه بطريقة صحيحة.</p>
+<p>احجز مقعدك الآن، وانضم إلى ورشة مجانية تمنحك تصورًا عمليًا عن المجال وكيف تبدأ فيه بطريقة صحيحة.</p>
 <a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">
 احجز مقعدك مجانًا
 </a>
@@ -633,6 +636,7 @@ transform: translateY(-3px);
 </div>
 </section>
 </main>
+
 <footer class="footer">
 <div class="container">
 <div class="footer-grid">
@@ -669,6 +673,7 @@ transform: translateY(-3px);
 </div>
 </div>
 </footer>
+
 <button id="backToTop" aria-label="الصعود للأعلى">↑</button>
 <script src="script.js" defer></script>
 <script>
@@ -690,6 +695,7 @@ if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' 
 if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); }
 });
 </script>
+
 <section class="share-section">
 <div class="container">
 <h3>شارك الورشة مع أصدقائك</h3>
