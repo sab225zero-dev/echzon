@@ -657,3 +657,34 @@ p{ font-size:1.05rem; color:var(--text); }
         transform: translateY(-3px);
     }
 }
+/* ==========================================================
+   FAQ & DOWNLOAD ICON MODERN STYLING
+========================================================== */
+/* تحجيم وضبط أيقونة التنزيل لتسحب مظهر حديث بدلاً من الحجم الضخم */
+.faq-card img, 
+.faq-icon,
+.download-icon {
+    width: 56px !important;
+    height: 56px !important;
+    max-width: 56px !important;
+    object-fit: contain;
+    padding: 12px;
+    background: rgba(47, 214, 255, 0.08);
+    border: 1px solid rgba(47, 214, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* تأثير التمرير (Hover Effect) لإعطاء لمسة عصرية */
+.faq-card:hover img,
+.faq-card:hover .faq-icon,
+.faq-card:hover .download-icon {
+    background: rgba(47, 214, 255, 0.2);
+    border-color: var(--primary, #2FD6FF);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(47, 214, 255, 0.25);
+}
