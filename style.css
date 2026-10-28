@@ -580,3 +580,27 @@ div:has(> a[href="#hero"]) {
     align-items: flex-start;
     gap: 8px;
 }
+/* تنسيق وتلوين روابط التنقل والفوتر بشكل عصري متناسق مع الواجهة */
+.footer-links a, 
+div[class*="footer"] a {
+    color: #a0aec0; /* لون رمادي فاتح وراقي متناسق مع الخلفية الداكنة */
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover, 
+div[class*="footer"] a:hover {
+    color: #38bdf8; /* لون أزرق مضيء وناعم يتناسب مع هوية الموقع عند تمرير الماوس */
+    transform: translateX(-5px);
+    text-decoration: none;
+}
+
+/* تنظيم قائمة التنقل عمودياً وبشكل أنيق */
+div:has(> a[href="#hero"]) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
