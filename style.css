@@ -660,7 +660,6 @@ p{ font-size:1.05rem; color:var(--text); }
 /* ==========================================================
    FAQ & DOWNLOAD ICON MODERN STYLING
 ========================================================== */
-/* تحجيم وضبط أيقونة التنزيل لتسحب مظهر حديث بدلاً من الحجم الضخم */
 .faq-card img, 
 .faq-icon,
 .download-icon {
@@ -679,7 +678,6 @@ p{ font-size:1.05rem; color:var(--text); }
     justify-content: center;
 }
 
-/* تأثير التمرير (Hover Effect) لإعطاء لمسة عصرية */
 .faq-card:hover img,
 .faq-card:hover .faq-icon,
 .faq-card:hover .download-icon {
@@ -687,4 +685,432 @@ p{ font-size:1.05rem; color:var(--text); }
     border-color: var(--primary, #2FD6FF);
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 25px rgba(47, 214, 255, 0.25);
+}
+/* ==========================================================
+   FILTER TABS STYLING
+========================================================== */
+.filter-tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(47, 214, 255, 0.2);
+    color: #e2e8f0;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover {
+    border-color: #2FD6FF;
+    color: #2FD6FF;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+
+.filter-item {
+    transition: all 0.4s ease;
+}
+
+.filter-item.hide {
+    display: none !important;
+}
+/* ==========================================================
+   BLOG SECTION STYLING
+========================================================== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(47, 214, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: #2FD6FF;
+    box-shadow: 0 10px 25px rgba(47, 214, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-card-badge {
+    align-self: flex-start;
+    background: rgba(47, 214, 255, 0.1);
+    color: #2FD6FF;
+    border: 1px solid rgba(47, 214, 255, 0.3);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.blog-link {
+    color: #2FD6FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.blog-card:hover .blog-link {
+    gap: 12px;
+}
+/* ==========================================================
+   ARCHIVES SECTION STYLING
+========================================================== */
+.archives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.archive-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(47, 214, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.archive-card:hover {
+    transform: translateY(-5px);
+    border-color: #2FD6FF;
+    box-shadow: 0 10px 25px rgba(47, 214, 255, 0.15);
+}
+
+.archive-badge {
+    align-self: flex-start;
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.archive-card h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.archive-card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.archive-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.archive-btn {
+    color: #2FD6FF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s ease;
+}
+
+.archive-btn:hover {
+    color: #ffffff;
+}
+/* ==========================================================
+   MODAL POPUP STYLING
+========================================================== */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 8, 22, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    background: #0d1127;
+    border: 1px solid rgba(47, 214, 255, 0.3);
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    color: #e2e8f0;
+}
+
+.custom-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal-btn:hover {
+    color: #2FD6FF;
+}
+
+.modal-content h2 {
+    color: #ffffff;
+    margin: 15px 0;
+    font-size: 1.4rem;
+}
+
+.modal-body {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.modal-body ul {
+    margin-top: 15px;
+    padding-right: 20px;
+}
+
+.modal-body li {
+    margin-bottom: 10px;
+}
+/* ==========================================================
+   INSTRUCTOR SECTION STYLING
+========================================================== */
+.instructor-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(47, 214, 255, 0.2);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.instructor-card:hover {
+    border-color: #2FD6FF;
+    transform: translateY(-5px);
+}
+
+.instructor-info h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.instructor-info p {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.instructor-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.instructor-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructor-btn.mostaql {
+    background: rgba(0, 114, 206, 0.15);
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.instructor-btn.khamsat {
+    background: rgba(93, 186, 76, 0.15);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.instructor-btn.soundeals {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.instructor-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+/* ==========================================================
+   DESKTOP NAVBAR FIX
+========================================================== */
+@media (min-width: 901px) {
+    /* إخفاء زر الهامبرغر في الشاشات الكبيرة */
+    .menu-btn {
+        display: none !important;
+    }
+
+    /* جعل القائمة تظهر بشكل أفقي في منتصف الهيدر */
+    .header .navbar {
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        flex-direction: row !important;
+        gap: 15px !important;
+        padding: 0 !important;
+    }
+
+    .header .navbar a {
+        font-size: 0.95rem !important;
+        font-weight: 600 !important;
+        padding: 6px 12px !important;
+        color: #e2e8f0 !important;
+        width: auto !important;
+    }
+
+    .header .navbar a:hover {
+        color: #2FD6FF !important;
+        background: rgba(47, 214, 255, 0.1) !important;
+    }
+}
+/* ==========================================================
+   AUDIO TOGGLE BUTTON STYLING
+========================================================== */
+.audio-control-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(47, 214, 255, 0.1);
+    border: 1px solid rgba(47, 214, 255, 0.3);
+    color: #2FD6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.audio-control-btn:hover {
+    background: rgba(47, 214, 255, 0.25);
+    border-color: #2FD6FF;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(47, 214, 255, 0.4);
+}
+
+.audio-control-btn.muted {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.1);
 }

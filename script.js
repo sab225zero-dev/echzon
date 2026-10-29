@@ -362,3 +362,124 @@ document.addEventListener("DOMContentLoaded", function () {
         if (secondsElem) secondsElem.textContent = String(seconds).padStart(2, '0');
     }, 1000);
 });
+// ==========================================================
+// FILTER TABS LOGIC
+// ==========================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterItems = document.querySelectorAll('.filter-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            filterItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.classList.remove('hide');
+                } else {
+                    item.classList.add('hide');
+                }
+            });
+        });
+    });
+});
+// ==========================================================
+// MODAL POPUP LOGIC
+// ==========================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+    const closeBtns = document.querySelectorAll('.close-modal-btn');
+    const overlays = document.querySelectorAll('.modal-overlay');
+
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modalId = btn.getAttribute('data-modal');
+            const targetModal = document.getElementById(modalId);
+            if (targetModal) {
+                targetModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    const closeModal = (modal) => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeModal(btn.closest('.custom-modal'));
+        });
+    });
+
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            closeModal(overlay.closest('.custom-modal'));
+        });
+    });
+});
+// التحكم في كتم وتشغيل الصوت الترحيبي
+const welcomeAudio = document.getElementById('welcome-audio');
+const audioToggleBtn = document.getElementById('audio-toggle-btn');
+
+if (welcomeAudio && audioToggleBtn) {
+    audioToggleBtn.addEventListener('click', () => {
+        if (welcomeAudio.muted || welcomeAudio.paused) {
+            welcomeAudio.muted = false;
+            welcomeAudio.play();
+            audioToggleBtn.classList.remove('muted');
+            audioToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        } else {
+            welcomeAudio.muted = true;
+            audioToggleBtn.classList.add('muted');
+            audioToggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        }
+    });
+}
+// التحكم النهائي في الرسالة الترحيبية وزر كتم الصوت
+document.addEventListener("DOMContentLoaded", function() {
+    const welcomeAudio = document.getElementById('welcome-audio');
+    const audioToggleBtn = document.getElementById('audio-toggle-btn');
+    
+    let hasPlayed = false;
+    let isMuted = false;
+
+    // تشغيل الصوت عند الضغط في أي مكان بالصفحة ما عدا زر الكتم
+    document.addEventListener('click', function(e) {
+        if (audioToggleBtn && audioToggleBtn.contains(e.target)) {
+            return; // تجاهل الضغط إذا كان على زر الكتم
+        }
+
+        if (welcomeAudio && !hasPlayed && !isMuted) {
+            welcomeAudio.muted = false;
+            welcomeAudio.play().then(() => {
+                hasPlayed = true;
+            }).catch(err => console.log("Autoplay blocked:", err));
+        }
+    });
+
+    // التحكم بزر كتم وتشغيل الصوت
+    if (welcomeAudio && audioToggleBtn) {
+        audioToggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            if (!isMuted) {
+                isMuted = true;
+                welcomeAudio.muted = true;
+                welcomeAudio.pause();
+                audioToggleBtn.classList.add('muted');
+                audioToggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                isMuted = false;
+                welcomeAudio.muted = false;
+                welcomeAudio.play().catch(err => console.log(err));
+                audioToggleBtn.classList.remove('muted');
+                audioToggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
+    }
+});

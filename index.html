@@ -99,27 +99,32 @@ transform: translateY(-3px);
             <i class="fas fa-wave-square" style="color: #00d2ff; font-size: 1.2rem;"></i>
         </a>
 
-        <!-- روابط التنقل (القائمة المنسدلة) -->
+        <!-- روابط التنقل المحدثة لتشمل الأقسام الجديدة -->
         <nav class="navbar" aria-label="القائمة الرئيسية">
             <a href="#hero">الرئيسية</a>
-            <a href="#workshops">الورشات القادمة</a>
-            <a href="#portfolio">معرض الأعمال</a>
-            <a href="#about">عن الورشة</a>
-            <a href="#details">التفاصيل</a>
-            <a href="#trainer">المدرب</a>
+            <a href="#workshops">الورشات</a>
+            <a href="#portfolio">معرض الصوت</a>
+            <a href="#blog">المدونة</a>
+            <a href="#archives">الأرشيف</a>
+            <a href="#instructor">عن المدرب</a>
+            <a href="#testimonials">آراء المتدربين</a>
             <a href="#faq">الأسئلة</a>
         </nav>
 
-        <!-- الأزرار جهة اليسار -->
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">احجز مقعدك</a>
-            <button class="menu-btn" aria-label="فتح القائمة">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
+       <!-- الأزرار جهة اليسار -->
+<div style="display: flex; align-items: center; gap: 12px;">
+    <!-- زر كتم وتشغيل الصوت الترحيبي -->
+    <button id="audio-toggle-btn" class="audio-control-btn" aria-label="تشغيل/كتم الصوت">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <a href="https://forms.gle/QxMimth5dfy1aAEY6" target="_blank" rel="noopener noreferrer" class="main-btn cta-button">احجز مقعدك</a>
+    <button class="menu-btn" aria-label="فتح القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
 </header>
 
 <main>
@@ -218,7 +223,40 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+<!-- قسم الورشات السابقة والأرشيف -->
+<section id="archives" class="archives-section reveal">
+<div class="container">
+<div class="section-title">
+<span>أرشيف المنصة</span>
+<h2>الورشات واللقاءات السابقة</h2>
+<p>استعرض ملخصات وتسجيلات النسخ السابقة من ورشات ECHZON للتعليق الصوتي</p>
+</div>
 
+<div class="archives-grid">
+<!-- ورشة أرشيفية 1 -->
+<div class="archive-card">
+    <div class="archive-badge">مكتملة</div>
+    <h3>أسرار هندسة الصوت والميكروفون المنزلي</h3>
+    <p>ورشة تفاعلية استعرضنا فيها كيفية إزالة الضوضاء وضبط مخارج الصوت عبر برامج المونتاج.</p>
+    <div class="archive-meta">
+        <span><i class="fas fa-calendar-alt"></i> النسخة الثالثة</span>
+        <a href="javascript:void(0)" class="archive-btn open-modal-btn" data-modal="modal-archive-1">مشاهدة الملخص <i class="fas fa-play-circle"></i></a>
+    </div>
+</div>
+
+<!-- ورشة أرشيفية 2 -->
+<div class="archive-card">
+    <div class="archive-badge">مكتملة</div>
+    <h3>قواعد الأداء الإعلاني التجاري</h3>
+    <p>جلسة تطبيقية حول كيفية قراءة النص الإعلاني بطريقة حماسية وإقناعية للعملاء.</p>
+    <div class="archive-meta">
+        <span><i class="fas fa-calendar-alt"></i> النسخة الثانية</span>
+        <a href="javascript:void(0)" class="archive-btn open-modal-btn" data-modal="modal-archive-2">مشاهدة الملخص <i class="fas fa-play-circle"></i></a>
+    </div>
+</div>
+</div>
+</div>
+</section>
 <section class="statistics reveal">
 <div class="container">
 <div class="stats-grid">
@@ -241,17 +279,24 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
-
-<!-- قسم معرض الأعمال الصوتية -->
+<!-- قسم معرض الأعمال الصوتية مع تبويبات التصفية -->
 <section id="portfolio" class="reveal">
 <div class="container">
 <div class="section-title">
 <span>نماذج وأعمال</span>
 <h2>استمع إلى عينات من أعمالنا الصوتية</h2>
 </div>
+
+<!-- شريط تبويبات التصفية السريعة -->
+<div class="filter-tabs-container">
+    <button class="filter-btn active" data-filter="all">الكل</button>
+    <button class="filter-btn" data-filter="fusha">إعلانات فصحى</button>
+    <button class="filter-btn" data-filter="saudi">لهجة سعودية</button>
+</div>
+
 <div class="portfolio-grid">
 <!-- العينة الأولى (الفصحى) -->
-<div class="audio-card">
+<div class="audio-card filter-item fusha">
     <h3>إعلانات تجارية متنوعة بالفصحى</h3>
     <p>أعمال صوتية تستعرض أنماط إعلانية متنوعة</p>
     <div class="custom-player">
@@ -265,7 +310,7 @@ transform: translateY(-3px);
 </div>
 
 <!-- العينة الثانية (السعودي) -->
-<div class="audio-card">
+<div class="audio-card filter-item saudi">
     <h3>إعلانات متنوعة باللهجة السعودية</h3>
     <p>إعلانات سعودية حماسية</p>
     <div class="custom-player">
@@ -575,7 +620,72 @@ transform: translateY(-3px);
 </div>
 </div>
 </section>
+<!-- قسم المقالات والنصائح الصوتية -->
+<section id="blog" class="blog-section reveal">
+<div class="container">
+<div class="section-title">
+<span>مدونة الصوت</span>
+<h2>نصائح ودلائل للناطقين والمعلقين</h2>
+<p>مجموعة من النصائح العملية لمساعدتك في الاستعداد والانطلاق في عالم التعليق الصوتي</p>
+</div>
 
+<div class="blog-grid">
+<!-- المقال الأول -->
+<article class="blog-card">
+    <div class="blog-card-badge">نصائح سريعة</div>
+    <h3>كيف تعتني بصوتك قبل جلسات التسجيل؟</h3>
+    <p>تمارين أساسية للإحماء الصوتي ونظام غذائي بسيط يحمي حبالك الصوتية من الإجهاد أثناء العمل.</p>
+    <a href="javascript:void(0)" class="blog-link open-modal-btn" data-modal="modal-blog-1">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+</article>
+
+<!-- بطاقة المعدات -->
+<article class="blog-card">
+    <div class="blog-card-badge">معدات</div>
+    <h3>أفضل ميكروفون اقتصادي لبدء استديو منزلي</h3>
+    <p>دليل شامل لاختيار أول ميكروفون وتجهيز عزل صوتي بسيط بأقل التكاليف الممكنة.</p>
+    <a href="javascript:void(0)" class="blog-link open-modal-btn" data-modal="modal-blog-2">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+</article>
+
+<!-- بطاقة سوق العمل -->
+<article class="blog-card">
+    <div class="blog-card-badge">سوق العمل</div>
+    <h3>كيف تبني أول عينة صوتية (ديمو) تجذب العملاء؟</h3>
+    <p>خطوات اختيار النصوص المناسبة، مدة العينة الاحترافية، وكيفية تقديمها للشركات.</p>
+    <a href="javascript:void(0)" class="blog-link open-modal-btn" data-modal="modal-blog-3">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+</article>
+</div>
+</div>
+</section>
+<!-- قسم التعريف بالمدرب والمعلق الصوتي -->
+<section id="instructor" class="instructor-section reveal">
+<div class="container">
+<div class="section-title">
+<span>عن المعلق والمدرب</span>
+<h2>صهيب جمعة</h2>
+<p>معلق صوتي محترف وخبير في هندسة الصوت، نسعى لتمكينك من دخول عالم التعليق الصوتي باحترافية</p>
+</div>
+
+<div class="instructor-card">
+    <div class="instructor-info">
+        <h3>خبرة عملية وموثوقية عالية</h3>
+        <p>بخبرة واسعة في تنفيذ مئات المشاريع الإعلانية والوثائقية والرد الآلي، يمكنك الاطلاع على تقييمات العملاء وأعمالنا السابقة عبر منصات العمل الحر المعتمدة:</p>
+        
+        <!-- أزرار منصات العمل الحر -->
+        <div class="instructor-links">
+            <a href="https://mostaql.com/u/souhaib225" target="_blank" rel="noopener noreferrer" class="instructor-btn mostaql">
+                <i class="fas fa-briefcase"></i> مستقل (Mostaql)
+            </a>
+            <a href="https://khamsat.com/user/souhaib_jomaa" target="_blank" rel="noopener noreferrer" class="instructor-btn khamsat">
+                <i class="fas fa-shopping-cart"></i> خمسات (Khamsat)
+            </a>
+            <a href="https://soundeals.com/user/Vobdesy76414" target="_blank" rel="noopener noreferrer" class="instructor-btn soundeals">
+                <i class="fas fa-microphone-alt"></i> سونديلز (Soundeals)
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
 <section id="faq" class="faq reveal">
 <div class="container">
 <div class="section-title">
@@ -657,12 +767,14 @@ transform: translateY(-3px);
 <span>مساحة يبدأ منها صوتك...</span>
 </div>
 <div class="footer-links">
-<h3>التنقل</h3>
+<h3>التنقل السريع</h3>
 <a href="#hero">الرئيسية</a>
 <a href="#workshops">الورشات القادمة</a>
-<a href="#about">عن الورشة</a>
-<a href="#details">التفاصيل</a>
-<a href="#trainer">المدرب</a>
+<a href="#portfolio">معرض الصوت</a>
+<a href="#blog">مدونة الصوت</a>
+<a href="#archives">أرشيف الورشات</a>
+<a href="#instructor">عن المدرب</a>
+<a href="#faq">الأسئلة الشائعة</a>
 </div>
 <div class="footer-contact">
 <div class="social-icons" style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
@@ -724,5 +836,95 @@ if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); }
 </div>
 </div>
 </section>
+
+<!-- Modal المقال الأول -->
+<div id="modal-blog-1" class="custom-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <span class="blog-card-badge">نصائح سريعة</span>
+        <h2>كيف تعتني بصوتك قبل جلسات التسجيل؟</h2>
+        <div class="modal-body">
+            <p>الحفاظ على سلامة حبالك الصوتية هو الحجر الأساس لأي معلق صوتي محترف. إليك أهم التوصيات العملية قبل البدء في أي جلسة تسجيل:</p>
+            <ul>
+                <li><strong>شرب الماء الدافيء:</strong> احرص على تناول الماء بدرجة حرارة الغرفة لتليين الحبال الصوتية تجنباً للجفاف.</li>
+                <li><strong>تمارين الإحماء (Warm-ups):</strong> قم بتمارين دندنة الشفاه (Lip Trills) والاهتزازات لمدة 5 إلى 10 دقائق.</li>
+                <li><strong>تجنب المنبهات والألبان:</strong> ابتعد عن القهوة والحليب قبل التسجيل مباشرة لمنع تكون المخاط أو جفاف الحلق.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal المقال الثاني (المعدات) -->
+<div id="modal-blog-2" class="custom-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <span class="blog-card-badge">معدات</span>
+        <h2>أفضل ميكروفون اقتصادي لبدء استديو منزلي</h2>
+        <div class="modal-body">
+            <p>لا تحتاج إلى ميزانية ضخمة للبدء في عالم التعليق الصوتي. إليك الأساسيات لتجهيز استديو منزلي مقبول:</p>
+            <ul>
+                <li><strong>نوع الميكروفون:</strong> يفضل البدء بميكروفونات USB عالية الجودة (مثل Blue Yeti أو Fifine) لسهولة ربطها، أو الانتقال لميكروفونات XLR مع كرت صوت (Audio Interface) لاحقاً.</li>
+                <li><strong>العزل الصوتي البسيط:</strong> استخدام ألواح الفوم العازلة (Acoustic Foam) أو حتى الستائر السميكة والوسائد داخل الغرفة لتقليل صدى الصوت (Echo).</li>
+                <li><strong>حامل الميكروفون وPop Filter:</strong> ضروريان لمنع اهتزازات اليد وإيقاف تدفق الهواء المزعج أثناء لفظ الحروف القوية (مثل الباء والتاء).</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal المقال الثالث (سوق العمل) -->
+<div id="modal-blog-3" class="custom-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <span class="blog-card-badge">سوق العمل</span>
+        <h2>كيف تبني أول عينة صوتية (ديمو) تجذب العملاء؟</h2>
+        <div class="modal-body">
+            <p>العينة الصوتية (Demo) هي بوابتك الحقيقية لدخول سوق العمل وإقناع العميل بقدراتك:</p>
+            <ul>
+                <li><strong>تنوع النصوص:</strong> اجمع نصوصاً قصيرة متنوعة (إعلان تجاري، تعليق وثائقي، رد آلي IVR).</li>
+                <li><strong>المدة الزمنية:</strong> اجعل الديمو مختصراً ومركزاً (بين دقيقة إلى دقيقتين كحد أقصى) لتجنب ملل المستمع.</li>
+                <li><strong>الجودة والنقاء:</strong> تأكد من خلو التسجيل تماماً من أصوات الضوضاء الخلفية، وارفعها على منصات مثل SoundCloud أو موقعك الشخصي لتسهيل مشاركتها.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal الأرشيف الأول (هندسة الصوت) -->
+<div id="modal-archive-1" class="custom-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <span class="archive-badge">النسخة الثالثة - مكتملة</span>
+        <h2>أسرار هندسة الصوت والميكروفون المنزلي</h2>
+        <div class="modal-body">
+            <p>ملخص الورشة العملية التي تناولنا فيها كيفية معالجة الصوت بأحدث الطرق الاحترافية:</p>
+            <ul>
+                <li><strong>إزالة الضوضاء (Noise Reduction):</strong> تطبيق فلتر الـ Noise Gate وإزالة الطنين الخلفي دون التأثير على طبيعة الصوت ونقائه.</li>
+                <li><strong>معادلة الصدى (EQ):</strong> ضبط الترددات العالية والمنخفضة للحصول على صوت دافئ ومستساغ للمستمع.</li>
+                <li><strong>مرحلة الضغط (Compression):</strong> موازنة مستويات الصوت المرتفعة والمنخفضة ليكون الصوت متسقاً طوال التسجيل.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal الأرشيف الثاني (الأداء الإعلاني) -->
+<div id="modal-archive-2" class="custom-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <span class="archive-badge">النسخة الثانية - مكتملة</span>
+        <h2>قواعد الأداء الإعلاني التجاري</h2>
+        <div class="modal-body">
+            <p>ملخص جلسة الأداء الإعلاني وكيفية تفجير الطاقة الحماسية في النصوص التجارية:</p>
+            <ul>
+                <li><strong>تحليل النص:</strong> معرفة نقاط الجذب (Hook) في ثواني الإعلان الأولى لجذب انتباه المستمع فوراً.</li>
+                <li><strong>التنغيم الصوتي (Intonation):</strong> تغيير طبقات الصوت بناءً على طبيعة المنتج (حماسي، هادئ، وثائقي، تسويقي).</li>
+                <li><strong>طريقة إلقاء الكلمات المفتاحية:</strong> تبريز الكلمات التي تحمل قيمة تسويقية عالية للعميل المستهدف.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
